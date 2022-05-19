@@ -1,0 +1,11 @@
+.cell{
+    border: 1px solid black;
+    min-width: 60px;
+    min-height: 60px;
+    display: inline-block;
+    background-color: white;
+}
+
+#container{
+    text-align: center;
+}
