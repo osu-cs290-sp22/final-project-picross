@@ -11,6 +11,15 @@ for(var i = 0; i < 10; i++){
     container.appendChild(row)                  //adding the row that is filled with cells to the container
 }
 
+// a function to handle a box getting clicked
+// right now it just changes the box color
+function boxClicked () {
+
+    var currentButton = event.target
+
+    currentButton.classList.toggle('box-clicked')
+
+}
 
 
 // var test = document.getElementById('test')
@@ -20,3 +29,6 @@ for(var i = 0; i < 10; i++){
 // })
 
 //likely need to recreate this so they all have indivudal ids
+
+var boxContainer = document.getElementById ('container')
+boxContainer.addEventListener ('click', boxClicked)
