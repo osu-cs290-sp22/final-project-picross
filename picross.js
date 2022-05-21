@@ -11,24 +11,23 @@ for(var i = 0; i < 10; i++){
     container.appendChild(row)                  //adding the row that is filled with cells to the container
 }
 
+
+
 // a function to handle a box getting clicked
 // right now it just changes the box color
-function boxClicked () {
+function boxClicked (event) {
 
     var currentButton = event.target
 
-    currentButton.classList.toggle('box-clicked')
-
+    if (currentButton.classList[0] === 'cell'){
+        currentButton.classList.toggle('box-clicked')
+        console.log(currentButton)
+    }
+    //could add a class to curent target boxes that will be a way to check with the answer sheet
 }
-
-
-// var test = document.getElementById('test')
-// test.addEventListener('click', function(event){
-//     test.style.backgroundColor = 'black'
-
-// })
-
-//likely need to recreate this so they all have indivudal ids
 
 var boxContainer = document.getElementById ('container')
 boxContainer.addEventListener ('click', boxClicked)
+
+
+
