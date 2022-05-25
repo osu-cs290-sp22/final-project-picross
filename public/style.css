@@ -1,6 +1,6 @@
 
 html {
-    background-image: linear-gradient(lightblue, darkblue);
+    background-image: linear-gradient(blue, darkblue);
     height: 110vh;
 }
 
@@ -28,6 +28,11 @@ html {
     background-color: coral;
 }
 
+.box-crossed {
+    background-image: url("https://web.engr.oregonstate.edu/~beitlerm/images/red_cross.png");
+}
+
+
 .row{
     line-height: 0;
 }
@@ -53,4 +58,11 @@ td{
 h4{
     color: white;
     padding-bottom: 22px;
+}
+
+/* CSS for radio buttons */
+#radio-buttons {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
 }

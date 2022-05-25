@@ -18,10 +18,15 @@ for(var i = 0; i < 10; i++){
 function boxClicked (event) {
 
     var currentButton = event.target
+    var action = document.querySelector('input[name="select"]:checked').id
 
-    if (currentButton.classList[0] === 'cell'){
+    if (currentButton.classList[0] === 'cell' && action === "select-color"){
+        currentButton.classList.remove('box-crossed')
         currentButton.classList.toggle('box-clicked')
-        console.log(currentButton)
+    }
+    else if (currentButton.classList[0] === 'cell' && action === "select-cross-out"){
+        currentButton.classList.remove('box-clicked')
+        currentButton.classList.toggle('box-crossed')
     }
     //could add a class to curent target boxes that will be a way to check with the answer sheet
 }
