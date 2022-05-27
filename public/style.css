@@ -1,6 +1,6 @@
 
 html {
-    background-image: linear-gradient(blue, darkblue);
+    background-image: linear-gradient(darkblue, rgb(41, 222, 242));
     height: 110vh;
 }
 
@@ -29,7 +29,7 @@ html {
 }
 
 .box-crossed {
-    background-image: url("https://web.engr.oregonstate.edu/~beitlerm/images/red_cross.png");
+    background-image: url("https://web.engr.oregonstate.edu/~beitlerm/images/black_cross.png");
 }
 
 
