@@ -66,3 +66,11 @@ h4{
     right: 10px;
     bottom: 10px;
 }
+
+/* For the 404 page */
+.error-container {
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+    font-size: 48px;
+}

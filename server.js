@@ -19,7 +19,7 @@ app.get('/', function (req, res, next){
 app.get('*', function (req, res) {
     res.status(404).render('404')
     //render the 404 handlebar
-  })
+})
 
 app.listen(port, function () {
 	console.log("== Server is listening on port 3000") 
