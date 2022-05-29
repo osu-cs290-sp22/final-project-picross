@@ -1,7 +1,9 @@
 
 html {
     background-image: linear-gradient(darkblue, rgb(41, 222, 242));
-    height: 110vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
 }
 
 .puzzle-title {
@@ -39,25 +41,31 @@ html {
 
 /* Top number CSS */
 table{
-    padding-left: 26.5%;
+    /* padding-left: 26.5%; */
+    margin-left: auto;
+    margin-right: auto;
     
 }
 
 td{
-    padding-left: 51px;
+    padding-right: 25px;
+    padding-left: 26px;
     color: white;
 }
 
 /* CSS for the side numbers */
 .side-numbers{
     position: absolute;
-    top: 175px;
-    padding-left: 23%;
+    top: 180px;
+    right: calc(50% + 320px);
 }
 
 h4{
     color: white;
-    padding-bottom: 22px;
+    /* not totally sure why but these were bold by default so I fixed it */
+    font-weight: 500;     
+    text-align: right;
+    padding: 10px 0 9px;
 }
 
 /* CSS for radio buttons */
