@@ -13,8 +13,8 @@ for(var i = 0; i < 10; i++){
 
 // sets up a default solution (where all answers are zero)
 // size should be an integer by now
-function defaultSolution (size) {
-    for (var i = 0; i < (size * size); i++ ) {
+function defaultSolution (puzzleSize) {
+    for (var i = 0; i < (puzzleSize * puzzleSize); i++ ) {
         solution.push(0)
     }
 }
@@ -39,7 +39,7 @@ function boxClicked (event) {
 
     // change answer
     // can probably be optimized
-    for (var i = 0; i < size * size; i++) {
+    for (var i = 0; i < puzzleSize * puzzleSize; i++) {
         if (allCells[parseInt(i)].classList.contains("box-clicked")) {
             solution [parseInt(i)] = 1
         } else {
@@ -51,13 +51,32 @@ function boxClicked (event) {
     //could add a class to curent target boxes that will be a way to check with the answer sheet
 }
 
-// size should be gotten from server
-var size = 10
+
+//get the current puzzle data if on a puzzle page
+//the size is stored in puzzleSizem, the solution in puzzleSol and the nam in puzzleName
+fetch("/puzzleData.json", {
+    method: 'GET'
+})
+.then(res => res.json())
+.then(data => {
+    console.log(data)
+    cururl = window.location.pathname
+    cururlparts = cururl.split('/')
+    if(cururlparts[1] === 'puzzle'){
+        puzzleSol = data.puzzles[parseInt(cururlparts[2])].solution
+        puzzleSize = data.puzzles[parseInt(cururlparts[2])].size
+        puzzleName =  data.puzzles[parseInt(cururlparts[2])].name
+    }
+})
+.then(res => {
+    defaultSolution (puzzleSize)    
+})
+
+
 
 // set up an empty solution
 var allCells = document.getElementsByClassName("cell")
 var solution = []
-defaultSolution (size)
 
 // set up box event listener
 var boxContainer = document.getElementById ('container')

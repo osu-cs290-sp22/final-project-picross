@@ -12,8 +12,26 @@ app.set('view engine', 'handlebars')
 //serves the index template
 app.use(express.static('public')) 
 
-app.get('/', function (req, res, next){
+var allpuzzles = require('./puzzleData.json')
+
+//opens the home page (not created yet)
+app.get('/', function(req, res, next){
     res.status(200).render('puzzlePage')
+})
+
+//opens the puzzle corrosponding to n 
+//(differentiating betwwen the puzzles is done client side based on url)
+app.get('/puzzle/:n', function (req, res, next){
+    var n = parseInt(req.params.n)
+    if(allpuzzles.puzzles[n]){
+        res.status(200).render('puzzlePage')
+    }else{
+        next()
+    }
+})
+
+app.get('/puzzleData.json', function(req, res){
+    res.status(200).sendFile(__dirname + "/puzzleData.json")
 })
 
 app.get('*', function (req, res) {
@@ -22,5 +40,5 @@ app.get('*', function (req, res) {
 })
 
 app.listen(port, function () {
-	console.log("== Server is listening on port 3000") 
+	console.log("== Server is listening on port " + port) 
 })
