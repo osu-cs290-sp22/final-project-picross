@@ -4,6 +4,7 @@ html {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100%;
+    font-family: 'Nunito', sans-serif;
 }
 
 .puzzle-title {
@@ -73,6 +74,172 @@ h4{
     position: fixed;
     right: 10px;
     bottom: 10px;
+}
+
+/* For the Main Menu page */
+.navList {
+    text-align: center;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.navTitle {
+    font-weight: 500;
+    font-size: 180px;
+    color: white;
+    margin: 20px 0px;
+}
+
+.navLink {
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    background-color: coral;
+    border: 5px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 20px;
+}
+
+#menu-button {
+    font-size: 22px;
+    color: black;
+    text-decoration: none;
+    background-color: coral;
+    margin: 1.5% 41.5%;
+    width: 15%;
+    padding: 25px;
+    border: 5px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#menu-button:hover {
+    background-color: white;
+    border-color: coral;
+    border-style: solid;
+}
+
+.navLink a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+
+/* For the Puzzle Select page */
+.puzzleList {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.menulink {
+    text-align: left;
+}
+
+.puzzletitle {
+    font-weight: 500;
+    font-size: 100px;
+    color: white;
+    margin: 30px 0px;
+}
+
+.puzzlelink {
+    display: inline-flex;
+}
+
+#puzzle-button {
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: coral;
+    margin: 0px 20px;
+    width: fit-content;
+    padding: 12px 20px;
+    border: 5px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#puzzle-button:hover {
+    background-color: white;
+    border-color: coral;
+    border-style: solid;
+}
+
+#return-main-button {
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+    background-color: coral;
+    margin: 10px;
+    width: fit-content;
+    padding: 10px 12px;
+    border: 3px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#return-main-button:hover {
+    background-color: white;
+    border-color: coral;
+    border-style: solid;
+}
+
+/* Help page spacing modifier */
+#help {
+    padding: 2px;
+}
+
+/* For the Help and About pages */
+.aboutMenu {
+    margin: 0px;
+    align-items: center;
+}
+.aboutList {
+    list-style: none;
+    display: block;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.aboutitem {
+    max-width: 100%;
+}
+
+.abouttitle {
+    font-weight: 500;
+    font-size: 100px;
+    color: white;
+    margin: 30px 0px 0px 0px;
+}
+
+#about-subtitle {
+    color: coral;
+    font-weight: 700;
+    font-size: 40px;
+    padding: 5px;
+    margin: 0px;
+}
+
+.abouttext {
+    color: white;
+    font-weight: 300;
+    font-size: 20px;
+    align-self: center;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding: 8px;
+    margin: 0px;
 }
 
 /* For the 404 page */
