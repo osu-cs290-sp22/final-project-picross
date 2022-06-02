@@ -16,7 +16,7 @@ var allpuzzles = require('./puzzleData.json')
 
 //opens the home page (not created yet)
 app.get('/', function(req, res, next){
-    res.status(200).render('puzzlePage')
+    res.status(200).render('homePage')
 })
 
 //opens the puzzle corrosponding to n 
