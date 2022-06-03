@@ -38,17 +38,23 @@ function boxClicked (event) {
     }
 
     // change answer
-    // can probably be optimized
+    var correct = 0
     for (var i = 0; i < puzzleSize * puzzleSize; i++) {
         if (allCells[parseInt(i)].classList.contains("box-clicked")) {
             solution [parseInt(i)] = 1
         } else {
             solution [parseInt(i)] = 0
         }
+
+        if (solution[i] != puzzleSol[i]) {
+            correct = 1
+        }
     }
 
-    console.log(solution)
-    //could add a class to curent target boxes that will be a way to check with the answer sheet
+    if (correct === 0){
+        alert ("you did it!")
+    }
+
 }
 
 
@@ -71,8 +77,6 @@ fetch("/puzzleData.json", {
 .then(res => {
     defaultSolution (puzzleSize)    
 })
-
-
 
 // set up an empty solution
 var allCells = document.getElementsByClassName("cell")

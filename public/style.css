@@ -249,3 +249,30 @@ h4{
     color: white;
     font-size: 48px;
 }
+
+/* For the radio buttons */
+#radio-buttons {
+    background-color: darkblue;
+    color: white;
+    border-radius: 10px;
+    height: calc(6% + 5px);;
+}
+
+input[type="radio"] {
+    appearance: checkbox;
+}
+
+#radio-div-select {
+    margin: 5px;
+    margin-bottom: 0px;
+    margin-top: 3px;
+    margin-right: 8px;
+
+}
+
+#radio-div-cross {
+    margin: 5px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-right: 8px;
+}
