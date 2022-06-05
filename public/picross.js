@@ -52,7 +52,8 @@ function boxClicked (event) {
     }
 
     if (correct === 0){
-        alert ("you did it!")
+        winScreen = document.getElementById ('gray-backdrop')
+        winScreen.classList.toggle ('hidden')
     }
 
 }

@@ -1,5 +1,5 @@
 <ol class="puzzleList">
-    <li class="puzzleitem menulink"><button type="button" id="return-main-button" onclick="window.location.href='../';">Back</button></li>
+    <li class="puzzleitem menulink"><button type="button" id="return-main-button" onclick="window.location.href='../puzzle.html';">Back</button></li>
 </ol>
 <h1 class = "puzzle-title">Puzzle 1</h1>
 
@@ -70,14 +70,6 @@
 </div>
 
 
-<div id="radio-buttons">
-    <div id="radio-div-select">
-        <input type="radio" name="select" id="select-color" value="color" checked> </button>
-        <label class="radio-label" for="select-color">Select</label>
-    </div>
+{{> choiceSelectButton}}
 
-    <div id="radio-div-cross">
-        <input type="radio" name="select" id="select-cross-out" value="cross"> </button>
-        <label class="radio-label" for="select-cross-out">Cross Out</label>
-    </div>
-</div>
+{{> winPopup}}
