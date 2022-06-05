@@ -57,7 +57,7 @@ td{
 /* CSS for the side numbers */
 .side-numbers{
     position: absolute;
-    top: 180px;
+    top: 250px;
     right: calc(50% + 320px);
 }
 
