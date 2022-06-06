@@ -1,15 +1,5 @@
-for(var i = 0; i < 10; i++){
-    var row = document.createElement('div')
-    row.classList.add('row')                    //creating a new row div
 
-    for(var j = 0; j < 10; j++){
-        var cell = document.createElement('div')
-        cell.classList.add('cell')
-        row.appendChild(cell)                   //creating a cell div and adding 10 of them to the row div to create a line
-    }
 
-    container.appendChild(row)                  //adding the row that is filled with cells to the container
-}
 
 // sets up a default solution (where all answers are zero)
 // size should be an integer by now
@@ -73,6 +63,20 @@ fetch("/puzzleData.json", {
         puzzleSize = data.puzzles[parseInt(cururlparts[2])].size
         puzzleName =  data.puzzles[parseInt(cururlparts[2])].name
     }
+    {
+        for(var i = 0; i < puzzleSize; i++){
+            var row = document.createElement('div')
+            row.classList.add('row')                    //creating a new row div
+    
+            for(var j = 0; j < puzzleSize; j++){
+                var cell = document.createElement('div')
+                cell.classList.add('cell')
+                row.appendChild(cell)                   //creating a cell div and adding 10 of them to the row div to create a line
+            }
+    
+            container.appendChild(row)                  //adding the row that is filled with cells to the container
+        }    
+    }
 })
 .then(res => {
     defaultSolution (puzzleSize)    
@@ -85,6 +89,8 @@ var solution = []
 // set up box event listener
 var boxContainer = document.getElementById ('container')
 boxContainer.addEventListener ('click', boxClicked)
+
+
 
 
 
