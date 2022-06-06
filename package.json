@@ -3,5 +3,10 @@
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
     "handlebars": "^4.7.7"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "handlebars views/partials/numbers.handlebars -f public/numbers.js",
+    "prestart": "npm run build"
   }
 }

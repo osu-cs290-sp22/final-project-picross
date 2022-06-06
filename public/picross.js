@@ -48,6 +48,74 @@ function boxClicked (event) {
 
 }
 
+//generates the numbers for the side and top of the puzzle
+function generateNumbers(solution, size){
+    sideNumbers = []
+    topNumbers = []
+    x5 = 0
+
+    if(size === 5){
+        x5 = 1
+    }
+
+    //fills the side numbers with the appropriate numbers
+    for(i = 0; i < size * size; i += size){
+        count = 0;
+        currow = ""
+        for(j = i; j < i + size; j++){
+            if(solution[j] === 1){
+                count++
+            }else if(count != 0){
+                currow += " "
+                currow += count
+                count = 0
+            }else{
+                count = 0
+            }
+        }
+        if(count != 0){
+            currow += " "
+            currow += count
+        }
+        sideNumbers.push(currow)
+    }
+
+    //create an empty 2d array of the proper size for the top row numbers
+    for(i = 0; i < Math.ceil(size/2); i++){
+        topNumbers.push([])
+        for(j = 0; j < size; j++){
+            topNumbers[i].push(0);
+        }
+    }
+
+    //fills the top numbers with the approipriate numbers
+    console.log(sideNumbers)
+    for(i = 0; i < size; i++){
+        count = 0; 
+        currow = Math.ceil(size/2) - 1;
+        for(j = size * 10 - i - 1; j >= 0; j -= size){
+            if(solution[j] === 1){
+                count++
+            }else if(count != 0){
+                topNumbers[currow][size - i - 1] = count
+                currow--
+                count = 0
+            }else{
+                count = 0
+            }
+        }
+        if(count != 0){
+            topNumbers[currow][size - i - 1] = count
+        }
+    }
+
+    return {
+        sideNumbers,
+        topNumbers,
+        x5
+    }
+}
+
 
 //get the current puzzle data if on a puzzle page
 //the size is stored in puzzleSizem, the solution in puzzleSol and the nam in puzzleName
@@ -64,6 +132,12 @@ fetch("/puzzleData.json", {
         puzzleSize = data.puzzles[parseInt(cururlparts[2])].size
         puzzleName =  data.puzzles[parseInt(cururlparts[2])].name
     }
+
+    var numbers = Handlebars.templates.numbers(generateNumbers(puzzleSol, puzzleSize))
+
+    var nameLocation = document.querySelector(".puzzle-title")
+    nameLocation.insertAdjacentHTML('afterend',numbers)
+
     {
         for(var i = 0; i < puzzleSize; i++){
             var row = document.createElement('div')
@@ -78,6 +152,10 @@ fetch("/puzzleData.json", {
             container.appendChild(row)                  //adding the row that is filled with cells to the container
         }    
     }
+
+    var boxContainer = document.getElementById ('container')
+    boxContainer.addEventListener ('click', boxClicked)
+
 })
 .then(res => {
     defaultSolution (puzzleSize)    
@@ -88,8 +166,7 @@ var allCells = document.getElementsByClassName("cell")
 var solution = []
 
 // set up box event listener
-var boxContainer = document.getElementById ('container')
-boxContainer.addEventListener ('click', boxClicked)
+
 
 
 

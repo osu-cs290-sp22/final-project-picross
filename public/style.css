@@ -55,7 +55,13 @@ td{
 }
 
 /* CSS for the side numbers */
-.side-numbers{
+.side-numbers5x5{
+    position: absolute;
+    top: 225px;
+    right: calc(50% + 170px);
+}
+
+.side-numbers10x10{
     position: absolute;
     top: 250px;
     right: calc(50% + 320px);

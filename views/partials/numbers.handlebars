@@ -1,0 +1,27 @@
+<table>
+    {{#each topNumbers}}
+    <tr>
+        {{#each this}}
+            <td>
+            {{#if this}}
+                {{this}}
+            {{/if}}
+            </td>
+        {{/each}}
+    </tr>
+ 
+    {{/each}}
+</table>
+<div id = "container"></div>
+
+{{#if x5}}
+    <div class = "side-numbers5x5">
+{{else}}
+    <div class = "side-numbers10x10">
+{{/if}}
+
+
+    {{#each sideNumbers}}
+        <h4> {{this}} </h4>
+    {{/each}}
+</div>
