@@ -14,17 +14,19 @@ app.use(express.static('public'))
 
 var allpuzzles = require('./puzzleData.json')
 
-//opens the home page (not created yet)
+//opens the home page
 app.get('/', function(req, res, next){
     res.status(200).render('homePage')
 })
 
 //opens the puzzle corrosponding to n 
-//(differentiating betwwen the puzzles is done client side based on url)
+//(differentiating between the puzzles is done client side based on url)
 app.get('/puzzle/:n', function (req, res, next){
     var n = parseInt(req.params.n)
     if(allpuzzles.puzzles[n]){
-        res.status(200).render('puzzlePage')
+        res.status(200).render('puzzlePage', {
+            name: allpuzzles.puzzles[n].name
+        })
     }else{
         next()
     }

@@ -2,7 +2,7 @@
     "puzzles" : [
 
         {
-            "name": "puzzle 1",
+            "name": "Puzzle 1",
             "size": 10,
             "solution": [
                         1, 1, 0, 0, 1, 0, 1, 1, 1, 1,
@@ -19,7 +19,7 @@
         },
 
         {
-            "name": "puzzle 2",
+            "name": "Puzzle 2",
             "size": 5,
             "solution": [
                         0,0,0,0,0,
