@@ -1,0 +1,12 @@
+<nav class="puzzleMenu">
+    <ol class="puzzleList">
+        <li class="puzzleitem menulink"><button type="button" id="return-main-button" onclick="window.location.href='../';">Back</button></li>
+
+        <li class="puzzleitem puzzletitle">Puzzle Select</li>
+
+        {{#each puzzleNumbers}}
+            {{> puzzleSelectButton name=this linkNum=@index}}
+        {{/each}}        
+
+    </ol>
+</nav>

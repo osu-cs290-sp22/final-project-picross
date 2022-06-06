@@ -32,6 +32,22 @@ app.get('/puzzle/:n', function (req, res, next){
     }
 })
 
+app.get('/puzzleSelect', function(req, res, next){
+    var numberOfPuzzles = [allpuzzles.puzzles.length]
+    var puzzleNumbers = []
+    for (var i = 0; i < numberOfPuzzles; i++){
+        puzzleNumbers.push(i+1)
+    }
+
+    res.status(200).render('puzzleSelectPage', {
+        puzzleNumbers: puzzleNumbers
+    })
+})
+
+app.get('/about', function(req, res, next){
+    res.status(200).render('aboutPage')
+})
+
 app.get('/puzzleData.json', function(req, res){
     res.status(200).sendFile(__dirname + "/puzzleData.json")
 })
