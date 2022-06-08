@@ -157,13 +157,17 @@ h4{
     display: inline-flex;
 }
 
+.puzzle-description{
+    color: white;
+}
+
 #puzzle-button {
     font-size: 25px;
     color: black;
     font-weight: 600;
     text-decoration: none;
     background-color: coral;
-    margin: 0px 20px;
+    margin: 0px 20px 20px;
     width: fit-content;
     padding: 12px 20px;
     border: 5px;
